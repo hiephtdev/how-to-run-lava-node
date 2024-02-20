@@ -25,11 +25,11 @@ echo -e "\e[1;33m3. Installing dependencies... \e[0m" && sleep 1;
 # packages
 sudo apt install -y unzip logrotate git jq sed wget curl coreutils systemd
 
-# Ki?m tra n?u Go d� du?c c�i d?t
+# Check go
 if command -v go &> /dev/null; then
     echo -e "\e[1;33m Go is already installed."
 else
-    # Download v� c�i d?t Go n?u chua c�
+    # Download
     go_package_url="https://go.dev/dl/go1.20.5.linux-amd64.tar.gz"
     go_package_file_name=${go_package_url##*\/}
     
