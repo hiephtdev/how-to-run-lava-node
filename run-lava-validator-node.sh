@@ -70,6 +70,9 @@ mkdir -p $lavad_binary_path
 # Download the genesis binary to the lava path
 wget -O ./lavad "https://github.com/lavanet/lava/releases/download/v0.35.1/lavad-v0.35.1-linux-amd64"
 chmod +x lavad
+# Lavad should now be accessible from PATH, to verify, try running
+sudo cp lavad /usr/local/bin
+
 
 # create service
 echo -e "\e[1;33m6. Create service... \e[0m" && sleep 1;
