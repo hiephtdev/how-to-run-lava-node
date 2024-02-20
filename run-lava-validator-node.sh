@@ -25,11 +25,11 @@ echo -e "\e[1;33m3. Installing dependencies... \e[0m" && sleep 1;
 # packages
 sudo apt install -y unzip logrotate git jq sed wget curl coreutils systemd
 
-# Kiểm tra nếu Go đã được cài đặt
+# Ki?m tra n?u Go d� du?c c�i d?t
 if command -v go &> /dev/null; then
     echo -e "\e[1;33m Go is already installed."
 else
-    # Download và cài đặt Go nếu chưa có
+    # Download v� c�i d?t Go n?u chua c�
     go_package_url="https://go.dev/dl/go1.20.5.linux-amd64.tar.gz"
     go_package_file_name=${go_package_url##*\/}
     
@@ -65,10 +65,9 @@ cp genesis_json/genesis.json $lava_config_folder/genesis.json
 
 # Set and create the lavad binary path
 echo -e "\e[1;33m5. Set and create the lavad binary path... \e[0m" && sleep 1;
-lavad_binary_path="$HOME/go/bin/"
-mkdir -p $lavad_binary_path
+required_upgrade_name="v0.35.1"
 # Download the genesis binary to the lava path
-wget -O ./lavad "https://github.com/lavanet/lava/releases/download/v0.35.1/lavad-v0.35.1-linux-amd64"
+wget -O ./lavad "https://github.com/lavanet/lava/releases/download/$required_upgrade_name/lavad-$required_upgrade_name-linux-amd64"
 chmod +x lavad
 # Lavad should now be accessible from PATH, to verify, try running
 sudo cp lavad /usr/local/bin
